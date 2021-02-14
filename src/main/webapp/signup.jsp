@@ -13,6 +13,37 @@
 </head>
 <body class="container">
 <h1>Registration</h1>
-
+<a class="btn btn-primary" href="/JavaEETest_war_exploded">Main</a>
+<a class="btn btn-primary" href="login">Sign in</a>
+<form action="signup" method="post">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="user" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="passwd" class="form-control" required>
+    </div>
+    <input type="submit" class="btn btn-primary">
+</form>
+<div>
+    <%
+        if (request.getMethod().equals("POST")) {
+            if (!request.getParameter("email").equals("")) {
+                out.print("<p>user: " + request.getParameter("email") + "</p>");
+            }
+            if (!request.getParameter("user").equals("")) {
+                out.print("<p>user: " + request.getParameter("user") + "</p>");
+            }
+            if (!request.getParameter("passwd").equals("")) {
+                out.print("<p>passwd: " + request.getParameter("passwd") + "</p>");
+            }
+        }
+    %>
+</div>
 </body>
 </html>
